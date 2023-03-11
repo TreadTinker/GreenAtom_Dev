@@ -27,7 +27,7 @@ ref class rel_sum
 			return round(sum_percent * 100) / 100;
 
 		}
-		// проверка 
+		// ГЇГ°Г®ГўГҐГ°ГЄГ  
 		static void ErrorTest(double summ, double percent) {
 			if (summ < 1.00 && summ > 1000000.00) {
 			}
@@ -35,11 +35,11 @@ ref class rel_sum
 			}
 		}
 		//
-		// Расчет процентов по займу с изменением процентной ставки
+		// ГђГ Г±Г·ГҐГІ ГЇГ°Г®Г¶ГҐГ­ГІГ®Гў ГЇГ® Г§Г Г©Г¬Гі Г± ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГҐГ¬ ГЇГ°Г®Г¶ГҐГ­ГІГ­Г®Г© Г±ГІГ ГўГЄГЁ
 		//
 		static double ChangePercentZaim(double sum_zaim, double percent, double percent_new, DateTime date_start, DateTime date_end, DateTime new_date) {
 			//
-			// Объявление переменых
+			// ГЋГЎГєГїГўГ«ГҐГ­ГЁГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г»Гµ
 			//
 			double summ_percent = 0, days1 = 0, days2 = 0, percent1 = 0, percent2 = 0;
 
@@ -63,10 +63,10 @@ ref class rel_sum
 			return round(summ_percent * 100) / 100;
 		}
 		//
-		// Расчет процентов с досрочным погашением
+		// ГђГ Г±Г·ГҐГІ ГЇГ°Г®Г¶ГҐГ­ГІГ®Гў Г± Г¤Г®Г±Г°Г®Г·Г­Г»Г¬ ГЇГ®ГЈГ ГёГҐГ­ГЁГҐГ¬
 		// 
 		//
-		static double EarlyRepaymentZaim(double sum_zaim, double percent, double new_percent, double repayment_summ, DateTime date_start, DateTime date_end, DateTime date_change, DateTime repayment_date) {
+		static returnRepayment EarlyRepaymentZaim(double sum_zaim, double percent, double new_percent, double repayment_summ, DateTime date_start, DateTime date_end, DateTime date_change, DateTime repayment_date) {
 			double summ_percent = 0, summ1 = 0, summ2 = 0, summ3 = 0, percent1 = 0, percent2 = 0, repayment = 0;
 			int days1 = 0, days2 = 0, days3 = 0;
 
@@ -85,22 +85,22 @@ ref class rel_sum
 			TimeSpan diff5 = date_end - repayment_date;
 			TimeSpan diff6 = date_end - date_change;
 			//
-			// Цепочки ветвлений 
+			// Г–ГҐГЇГ®Г·ГЄГЁ ГўГҐГІГўГ«ГҐГ­ГЁГ© 
 			//
 			if (repayment_date >= date_change) {
-				// //Количество дней 1
+				// //ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 1
 				days1 = diff1.Days - 1;
-				// // Количество дней 2
+				// // ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 2
 				days2 = diff3.Days + 1;
-				// // Количество дней 3
+				// // ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 3
 				days3 = diff5.Days;
 			}
 			else {
-				// //Количество дней 1
+				// //ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 1
 				days1 = diff2.Days;
-				// // Количество дней 2
+				// // ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 2
 				days2 = diff4.Days - 1;
-				// // Количество дней 3
+				// // ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¤Г­ГҐГ© 3
 				days3 = diff6.Days + 1;
 			}
 
